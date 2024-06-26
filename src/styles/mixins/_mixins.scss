@@ -1,0 +1,49 @@
+//border Radius desktop
+@mixin border-radius($radius: 25px) {
+  -webkit-border-radius: $radius; //propiedades para todos los navegadores
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+//border radius Cards
+@mixin border-radius-card($radius: 10px) {
+  -webkit-border-radius: $radius; //propiedades para todos los navegadores
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin border-radius-tags($radius: 10px) {
+  -webkit-border-radius: $radius; //propiedades para todos los navegadores
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+//border radius smartphone
+@mixin border-radius-sm($radius: 10px) {
+  -webkit-border-radius: $radius; //propiedades para todos los navegadores
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+//radius Collapse
+@mixin border-radius-collapse($radius: 5px) {
+  -webkit-border-radius: $radius; //propiedades para todos los navegadores
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+//radius Collapse
+@mixin border-radius-host-img($radius: 50%) {
+  -webkit-border-radius: $radius; //propiedades para todos los navegadores
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+//box shadow h1 de banner
+@mixin drop-shadow {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.694));
+}
+//drop shadow banner
+@mixin drop-shadow-banner {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+}

@@ -1,0 +1,126 @@
+//en scss il fau utyilizer "as main" le nom du fichie pour fair functione l'importation
+@use '../../styles/main.scss' as main;
+//colors
+@import '../../styles/base/colors';
+//import pour gerer les medias queries
+@import '../../styles/media/querie';
+.gallery {
+  background-color: $bacground-secondary-color;
+  @include main.border-radius;
+  padding: 50px;
+  margin-bottom: 50px;
+
+  .gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-content: center;
+    align-items: center;
+    column-gap: 55px;
+    row-gap: 45px;
+
+    .gallery__grid--item {
+      position: relative;
+      width: 100%;
+      padding-top: 100%; // mantien de la position carre
+      margin: 0 auto;
+      @include main.border-radius-card;
+      overflow: hidden;
+      //pour que Link fonctione correctemmen
+      //il faut lui donne une valeur de z-index eleve
+      .gallery__grid--link {
+        z-index: 4;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          @include main.border-radius-card;
+          z-index: 1;
+        }
+        h2 {
+          position: absolute;
+          z-index: 3;
+          color: $secondary-color-text;
+          font-weight: 700;
+          bottom: 20px;
+          left: 20px;
+          font-size: 18px;
+          padding-right: 20px;
+        }
+        &::before {
+          @include main.border-radius-card;
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.55) 0%,
+            rgba(0, 0, 0, 0) 50%
+          );
+          z-index: 2; // asegúrate de que el pseudo-elemento esté encima de la imagen
+        }
+      }
+    }
+  }
+  //media queries
+  @media (max-width: $breakpoint-xs) {
+  }
+  @media (max-width: $breakpoint-sm) {
+    margin-bottom: 25px;
+    padding: 0;
+    background: none;
+    .gallery__grid {
+      row-gap: 25px;
+
+      margin: 0 auto;
+      .gallery__grid--item {
+        //gere le heigh de l'image
+        padding-top: 290px;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-md) {
+    .gallery__grid {
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    }
+  }
+  @media (max-width: $breakpoint-lg) {
+  }
+  @media (max-width: $breakpoint-xl) {
+  }
+}
+
+/*.gallery {
+  background-color: $bacground-secondary-color;
+  @include main.border-radius;
+  padding: 50px;
+
+  //@include main.border-radius();
+  .gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    //grid-template-rows: 340px;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+    row-gap: 40px;
+
+    .gallery__grid--item {
+      //max-width: 340px;
+      margin: 0 auto;
+      @include main.border-radius-card;
+
+      img {
+        width: 340px;
+        height: 340px;
+        object-fit: cover;
+        @include main.border-radius-card;
+      }
+    }
+  }
+}*/

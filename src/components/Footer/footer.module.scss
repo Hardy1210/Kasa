@@ -1,0 +1,53 @@
+//en scss il fau utyilizer "as main" le nom du fichie pour fair functione l'importation
+@use '../../styles/main.scss' as main;
+//colors
+@import '../../styles/base/colors';
+//import pour gerer les medias queries
+@import '../../styles/media/querie';
+
+.footer {
+  position: absolute;
+  //il est important de faire travaille la position absolut
+  //avec ses parametres
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: $secondary-color-text;
+  background-color: $background-footer-color;
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+
+  //pour changer de couleur le SVG, on peut aussi asigne
+  //une balise div et change la couleur avec background
+  .footer__logo {
+    width: 125px;
+    filter: brightness(0) invert(1);
+    margin-bottom: 45px;
+  }
+  p {
+    font-size: 1.4em;
+    bottom: 50px;
+    margin-bottom: 30px;
+  }
+  @media (max-width: $breakpoint-xs) {
+  }
+  @media (max-width: $breakpoint-sm) {
+    .footer__logo {
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 0.75em;
+      margin-bottom: 65px;
+      width: 100px;
+    }
+  }
+  @media (max-width: $breakpoint-md) {
+  }
+  @media (max-width: $breakpoint-lg) {
+  }
+  @media (max-width: $breakpoint-xl) {
+  }
+}

@@ -1,0 +1,90 @@
+//@use '../../styles/main.scss' as main;
+//import pour gerer les medias queries
+@import '../../styles/media/querie';
+header {
+  .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    //piensa tal ves en poner en porcentage el padding general del body
+    padding: 40px 0px;
+    &__logo {
+      width: 210px;
+    }
+    &__link {
+      display: flex;
+      flex-direction: row;
+      gap: 57px;
+      .link {
+        text-decoration: none;
+        color: inherit;
+        font-weight: 500;
+        position: relative;
+      }
+      //effet de survol
+      .link::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 1px;
+        width: 0;
+        height: 1px;
+        background-color: currentColor;
+        transition:
+          width 0.2s ease-in-out,
+          left 0.2s ease-in-out;
+        transform: translateX(
+          -50%
+        ); /* Centrar el punto de inicio del pseudo-elemento */
+      }
+
+      .link:hover::after {
+        width: 100%;
+        left: 50%;
+        transform: translateX(
+          -50%
+        ); /* Mantener centrado el subrayado durante la expansión */
+      }
+
+      .link:not(:hover)::after {
+        width: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  //media queries
+  @media (max-width: $breakpoint-xs) {
+    .nav {
+      &__logo {
+        width: 110px;
+      }
+      .nav__link {
+        font-size: 9px;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-sm) {
+    .nav {
+      gap: 26px;
+      padding: 20px 0 30px 0;
+      &__logo {
+        max-width: 145px;
+        min-width: 90px;
+      }
+      &__link {
+        gap: 26px;
+        font-size: 0.6em;
+        text-transform: uppercase;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-md) {
+  }
+  @media (max-width: $breakpoint-lg) {
+  }
+  @media (max-width: $breakpoint-xl) {
+  }
+}

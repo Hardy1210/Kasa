@@ -1,0 +1,20 @@
+//importer et reesporter les styles global
+//styles reset
+@forward './base/reset';
+//styles global
+@forward './base/global';
+//base colors
+@forward './base/colors';
+//style typography
+@forward './base/typography';
+//style mixins
+@forward './mixins/mixins';
+//media queries
+//attention içi c'est seule import qui gere tout le contenu
+//@forward './media/querie';
+
+//PARA PODER VOLVER A LOS AJUSTES DE BASE:
+//RESTAURA EL CONTENIDO ANTERIOR DE ESTE FICHERO
+//RESTAURA EL MEDIA QUERIES DE MAIN.SCSS QUE ESTA COMENTADO
+// BORRA TODO LOS PARAMETROS DE _GLOBAL.SCSS
+// Y MANEJA TODOS LOS QUERIES POR PAGINA DEL PROYECTO

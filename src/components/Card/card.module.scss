@@ -1,0 +1,6 @@
+@use '../../styles/main.scss' as main;
+.figure {
+  //width: 340px;
+  @include main.border-radius-card;
+}
+/*<h2>title</h2>*/

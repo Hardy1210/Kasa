@@ -1,0 +1,55 @@
+//en scss il fau utyilizer "as main" le nom du fichie pour fair functione l'importation
+@use '../../styles/main.scss' as main;
+//colors
+@import '../../styles/base/colors';
+//import pour gerer les medias queries
+@import '../../styles/media/querie';
+
+.collapse__container {
+  display: flex;
+  flex-direction: column;
+  //padding: 0 100px;
+  //margin-bottom: 30px;
+  width: 83%;
+  margin: 3px auto;
+  //height: auto;
+
+  .collapse {
+    margin-bottom: 30px;
+    h3 {
+      background-color: $primary-color;
+      font-weight: 700;
+      color: $secondary-color-text;
+      padding: 15px 15px;
+      @include main.border-radius-collapse;
+    }
+    p {
+      padding: 15px;
+      font-weight: 500;
+    }
+  }
+  @media (max-width: $breakpoint-xs) {
+  }
+  @media (max-width: $breakpoint-sm) {
+    width: 100%;
+    .collapse {
+      margin-bottom: 15px;
+      h3 {
+        font-weight: 700;
+        font-size: 13px;
+
+        padding: 10px 10px;
+      }
+      p {
+        padding: 15px;
+        font-weight: 500;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-md) {
+  }
+  @media (max-width: $breakpoint-lg) {
+  }
+  @media (max-width: $breakpoint-xl) {
+  }
+}

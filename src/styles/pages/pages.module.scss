@@ -1,0 +1,19 @@
+//en scss il fau utyilizer "as main" le nom du fichie pour fair functione l'importation
+@use '../../styles/main.scss' as main;
+//colors
+@import '../../styles/base/colors';
+//import pour gerer les medias queries
+@import '../../styles/media/querie';
+.housing {
+  display: flex;
+  flex-direction: column;
+
+  .housing__banner {
+    img {
+      width: 1240px;
+      height: 415px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}

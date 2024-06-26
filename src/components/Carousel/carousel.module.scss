@@ -1,0 +1,82 @@
+@use '../../styles/main.scss' as main;
+//colors
+@import '../../styles/base/colors';
+//import pour gerer les medias queries
+@import '../../styles/media/querie';
+
+.carousel__container {
+  position: relative;
+  .pictures__container {
+    @include main.border-radius;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 425px;
+      object-fit: cover;
+      display: none;
+    }
+    img.active {
+      display: block;
+    }
+    .button__container {
+      //width: 100%;
+      //position: absolute;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      //padding: 0 20px;
+      .left__arrow {
+        left: 20px;
+      }
+      .right__arrow {
+        right: 20px;
+      }
+      .left__arrow,
+      .right__arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 6em;
+        color: $secondary-color-text;
+        background: none;
+        border: none;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-xs) {
+  }
+  @media (max-width: $breakpoint-sm) {
+    .pictures__container {
+      @include main.border-radius-card;
+      img {
+        height: 290px;
+      }
+      .button__container {
+        .left__arrow,
+        .right__arrow {
+          font-size: 1.8em;
+        }
+        .left__arrow {
+          left: 5px;
+        }
+        .right__arrow {
+          right: 5px;
+        }
+      }
+    }
+  }
+  @media (max-width: $breakpoint-md) {
+  }
+  @media (max-width: $breakpoint-lg) {
+  }
+  @media (max-width: $breakpoint-xl) {
+  }
+}
