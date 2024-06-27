@@ -12,7 +12,15 @@
   -ms-border-radius: $radius;
   border-radius: $radius;
 }
+//border radius tags
 @mixin border-radius-tags($radius: 10px) {
+  -webkit-border-radius: $radius; //propiedades para todos los navegadores
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+//Border radius tags smartphonr
+@mixin border-radius-tags-sm($radius: 5px) {
   -webkit-border-radius: $radius; //propiedades para todos los navegadores
   -moz-border-radius: $radius;
   -ms-border-radius: $radius;
@@ -25,8 +33,15 @@
   -ms-border-radius: $radius;
   border-radius: $radius;
 }
-//radius Collapse
+//radius Collapse about
 @mixin border-radius-collapse($radius: 5px) {
+  -webkit-border-radius: $radius; //propiedades para todos los navegadores
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+//radius Collapse Housing
+@mixin border-radius-collapse-housing($radius: 10px) {
   -webkit-border-radius: $radius; //propiedades para todos los navegadores
   -moz-border-radius: $radius;
   -ms-border-radius: $radius;

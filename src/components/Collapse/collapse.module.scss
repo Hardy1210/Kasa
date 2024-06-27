@@ -6,6 +6,7 @@
 @import '../../styles/media/querie';
 
 .collapse__container {
+  position: relative;
   display: flex;
   flex-direction: column;
   //padding: 0 100px;
@@ -16,6 +17,7 @@
 
   .collapse {
     margin-bottom: 30px;
+    cursor: pointer;
     h3 {
       background-color: $primary-color;
       font-weight: 700;
@@ -27,7 +29,41 @@
       padding: 15px;
       font-weight: 500;
     }
+    //animation de la description
+    .expandContainer {
+      overflow: hidden;
+    }
+
+    .expandContract {
+      //border-bottom: 1px solid red;
+      margin-top: -100%;
+      transition: all ease-in-out 0.5s;
+    }
+
+    .expandContract.expanded {
+      margin-top: 0;
+    }
+
+    .expandContract.collapsed {
+      margin-top: -100%;
+    }
+    //animation de la fleche up
+    .up__arrow {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      font-size: 1.8em;
+      color: $secondary-color-text;
+      cursor: pointer;
+      //animation
+      transition: transform 0.3s ease-in-out;
+      //transform-origin: center;
+    }
+    .rotate {
+      transform: rotate(-180deg);
+    }
   }
+
   @media (max-width: $breakpoint-xs) {
   }
   @media (max-width: $breakpoint-sm) {
@@ -36,13 +72,19 @@
       margin-bottom: 15px;
       h3 {
         font-weight: 700;
-        font-size: 13px;
+        font-size: 15px;
 
         padding: 10px 10px;
       }
       p {
         padding: 15px;
         font-weight: 500;
+        font-size: 15px;
+      }
+      .up__arrow {
+        font-size: 1.2em;
+        right: 15px;
+        top: 9px;
       }
     }
   }

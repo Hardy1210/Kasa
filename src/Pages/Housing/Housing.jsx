@@ -3,9 +3,11 @@ import { useParams, useNavigate } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import Carousel from '../../components/Carousel/Carousel'
+import Collapse from '../../components/Collapse/Collapse'
 import data from '../../data/data.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+
 //styles
 import styles from '../../Pages/Housing/housing.module.scss'
 //import styles from '../Housing/housing.module.scss'
@@ -62,6 +64,18 @@ function Housing() {
             {renderStars(housingData.rating)}
           </div>
         </div>
+      </div>
+      <div className={styles['collapse__container--housing']}>
+        <Collapse
+          title="Description"
+          content={housingData.description}
+          additionalClass={styles['customCollapseHousing']}
+        />
+        <Collapse
+          title="Equipments"
+          content={housingData.equipments.join(', ')}
+          additionalClass={styles['customCollapseHousing']}
+        />
       </div>
       <Footer />
     </>

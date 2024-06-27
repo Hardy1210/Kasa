@@ -5,7 +5,7 @@
 @import '../../styles/media/querie';
 
 .housing__content {
-  margin: 35px auto 45px auto;
+  margin: 35px auto 10px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -14,7 +14,7 @@
   .housing__content--info {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     margin-bottom: 20px;
     h1 {
       font-size: clamp(18px, 4vw, 36px);
@@ -30,6 +30,7 @@
       flex-direction: row;
       gap: 20px;
       color: $secondary-color-text;
+      margin-top: 12px;
       .tag {
         display: flex;
         justify-content: center;
@@ -78,18 +79,97 @@
       margin: 0 auto;
       font-size: 24px;
       gap: 15px;
-      margin-top: 32px;
+      margin-top: 27px;
+      .filled-star {
+        display: block;
+      }
+      .empty-star {
+        color: $color-empty-star;
+      }
     }
   }
   @media (max-width: $breakpoint-xs) {
   }
   @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
+    margin: 15px auto 15px auto;
+    .housing__content--info {
+      gap: 13px;
+      margin-bottom: 15px;
+      h4 {
+        font-size: 0.9em;
+      }
+      ul {
+        margin: 0;
+        gap: 10px;
+        .tag {
+          width: 90px;
+          min-width: 30px;
+          height: 18px;
+          font-size: 0.7em;
+          padding: 3px 20px;
+          @include main.border-radius-tags-sm;
+        }
+      }
+    }
+    .housing__content--host {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      .host {
+        h4 {
+          font-size: 12px;
+          line-height: 1.5;
+        }
+        img {
+          width: 35px;
+          height: 35px;
+        }
+      }
+      .rating {
+        margin: 0;
+        font-size: 15px;
+        gap: 7px;
+      }
+    }
   }
   @media (max-width: $breakpoint-md) {
   }
   @media (max-width: $breakpoint-lg) {
   }
   @media (max-width: $breakpoint-xl) {
-    padding-bottom: 210px;
+    //padding-bottom: 210px;
+  }
+}
+
+//COMPOSANT COLLAPSE STYLE ADITIONAL
+.collapse__container--housing {
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+  margin-bottom: 15px;
+  .customCollapseHousing {
+    .collapse__container {
+      .collapse {
+        h3 {
+          @include main.border-radius-collapse-housing;
+        }
+      }
+    }
+  }
+  //media
+  @media (max-width: $breakpoint-xs) {
+  }
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
+    gap: 0;
+  }
+  @media (max-width: $breakpoint-md) {
+  }
+  @media (max-width: $breakpoint-lg) {
+  }
+  @media (max-width: $breakpoint-xl) {
+    //padding-bottom: 210px;
+    //margin-bottom: 10px;
   }
 }
