@@ -40,8 +40,14 @@
     margin-top: 25px;
     font-weight: 500;
   }
-  @media (max-width: $breakpoint-xs) {
-    padding-bottom: 210px;
+  @media (max-width: $breakpoint-xl) {
+    //padding-bottom: 310px;
+  }
+  @media (max-width: $breakpoint-lg) {
+    //padding-bottom: 210px;
+  }
+  @media (max-width: $breakpoint-md) {
+    //padding-bottom: 210px;
   }
   @media (max-width: $breakpoint-sm) {
     padding-bottom: 210px;
@@ -58,13 +64,7 @@
       font-size: 0.9em;
     }
   }
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: $breakpoint-xs) {
     //padding-bottom: 210px;
-  }
-  @media (max-width: $breakpoint-lg) {
-    //padding-bottom: 210px;
-  }
-  @media (max-width: $breakpoint-xl) {
-    //padding-bottom: 310px;
   }
 }

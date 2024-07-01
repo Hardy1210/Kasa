@@ -15,19 +15,19 @@
   //on  a le style du composant a gerer aussi
   //le padding a 210 est pour poousse le footer
   //qui est en absolut
-  @media (max-width: $breakpoint-xs) {
-    //padding-bottom: 210px;
-  }
-  @media (max-width: $breakpoint-sm) {
-    //padding-bottom: 210px;
-  }
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: $breakpoint-xl) {
     //padding-bottom: 210px;
   }
   @media (max-width: $breakpoint-lg) {
     //padding-bottom: 210px;
   }
-  @media (max-width: $breakpoint-xl) {
+  @media (max-width: $breakpoint-md) {
+    //padding-bottom: 210px;
+  }
+  @media (max-width: $breakpoint-sm) {
+    //padding-bottom: 210px;
+  }
+  @media (max-width: $breakpoint-xs) {
     //padding-bottom: 210px;
   }
 }

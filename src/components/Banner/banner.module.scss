@@ -55,7 +55,14 @@
     @include main.drop-shadow;
   }
   //media
-  @media (max-width: $breakpoint-xs) {
+  @media (max-width: $breakpoint-xl) {
+    //padding: 0 0 0 0;
+  }
+  @media (max-width: $breakpoint-lg) {
+    //padding: 0 0 0 0;
+  }
+
+  @media (max-width: $breakpoint-md) {
     //padding: 0 0 0 0;
   }
   @media (max-width: $breakpoint-sm) {
@@ -70,13 +77,7 @@
       left: 36%;
     }
   }
-  @media (max-width: $breakpoint-md) {
-    //padding: 0 0 0 0;
-  }
-  @media (max-width: $breakpoint-lg) {
-    //padding: 0 0 0 0;
-  }
-  @media (max-width: $breakpoint-xl) {
+  @media (max-width: $breakpoint-xs) {
     //padding: 0 0 0 0;
   }
 }

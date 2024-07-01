@@ -4,16 +4,3 @@
 @import '../../styles/base/colors';
 //import pour gerer les medias queries
 @import '../../styles/media/querie';
-.housing {
-  display: flex;
-  flex-direction: column;
-
-  .housing__banner {
-    img {
-      width: 1240px;
-      height: 415px;
-      object-fit: cover;
-      object-position: center;
-    }
-  }
-}

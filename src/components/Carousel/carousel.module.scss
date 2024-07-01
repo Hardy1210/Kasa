@@ -49,9 +49,26 @@
         appearance: none;
         cursor: pointer;
       }
+      //composant Counter
+      .counter {
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        bottom: 30px;
+        color: $secondary-color-text;
+        font-size: 18px;
+        font-weight: 500;
+        z-index: 1;
+      }
     }
   }
-  @media (max-width: $breakpoint-xs) {
+  @media (max-width: $breakpoint-xl) {
+  }
+  @media (max-width: $breakpoint-lg) {
+  }
+  @media (max-width: $breakpoint-md) {
   }
   @media (max-width: $breakpoint-sm) {
     .pictures__container {
@@ -70,13 +87,13 @@
         .right__arrow {
           right: 5px;
         }
+        //composant Counter
+        .counter {
+          display: none;
+        }
       }
     }
   }
-  @media (max-width: $breakpoint-md) {
-  }
-  @media (max-width: $breakpoint-lg) {
-  }
-  @media (max-width: $breakpoint-xl) {
+  @media (max-width: $breakpoint-xs) {
   }
 }

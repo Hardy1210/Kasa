@@ -32,7 +32,11 @@
     bottom: 50px;
     margin-bottom: 30px;
   }
-  @media (max-width: $breakpoint-xs) {
+  @media (max-width: $breakpoint-xl) {
+  }
+  @media (max-width: $breakpoint-lg) {
+  }
+  @media (max-width: $breakpoint-md) {
   }
   @media (max-width: $breakpoint-sm) {
     .footer__logo {
@@ -44,10 +48,6 @@
       width: 100px;
     }
   }
-  @media (max-width: $breakpoint-md) {
-  }
-  @media (max-width: $breakpoint-lg) {
-  }
-  @media (max-width: $breakpoint-xl) {
+  @media (max-width: $breakpoint-xs) {
   }
 }

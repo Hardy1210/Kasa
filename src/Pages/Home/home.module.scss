@@ -2,19 +2,19 @@
 @import '../../styles/media/querie';
 //styles general de la  page home
 .home__container {
-  @media (max-width: $breakpoint-xs) {
-    //padding: 0 0 210px 0;
-  }
-  @media (max-width: $breakpoint-sm) {
-    //padding: 0 0 210px 0;
-  }
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: $breakpoint-xl) {
     //padding: 0 0 210px 0;
   }
   @media (max-width: $breakpoint-lg) {
     //padding: 0 0 210px 0;
   }
-  @media (max-width: $breakpoint-xl) {
+  @media (max-width: $breakpoint-md) {
+    //padding: 0 0 210px 0;
+  }
+  @media (max-width: $breakpoint-sm) {
+    //padding: 0 0 210px 0;
+  }
+  @media (max-width: $breakpoint-xs) {
     //padding: 0 0 210px 0;
   }
 }

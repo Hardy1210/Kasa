@@ -28,6 +28,7 @@
     ul {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       gap: 20px;
       color: $secondary-color-text;
       margin-top: 12px;
@@ -35,13 +36,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        @include main.border-radius-tags;
-        background-color: $primary-color;
         //attention on peut metre
         //simplement un width en pixels
         //et de le modifier la taille en queries
-        min-width: 100px;
-        max-width: 145px;
+        //width: 100px;
+        min-width: 30px;
+
+        @include main.border-radius-tags;
+        background-color: $primary-color;
+
         height: 20px;
         font-size: 0.9em;
         font-weight: 600;
@@ -88,7 +91,12 @@
       }
     }
   }
-  @media (max-width: $breakpoint-xs) {
+  @media (max-width: $breakpoint-xl) {
+    //padding-bottom: 210px;
+  }
+  @media (max-width: $breakpoint-lg) {
+  }
+  @media (max-width: $breakpoint-md) {
   }
   @media (max-width: $breakpoint-sm) {
     flex-direction: column;
@@ -102,9 +110,10 @@
       ul {
         margin: 0;
         gap: 10px;
+        flex-wrap: nowrap;
         .tag {
           width: 90px;
-          min-width: 30px;
+          min-width: 15px;
           height: 18px;
           font-size: 0.7em;
           padding: 3px 20px;
@@ -133,12 +142,7 @@
       }
     }
   }
-  @media (max-width: $breakpoint-md) {
-  }
-  @media (max-width: $breakpoint-lg) {
-  }
-  @media (max-width: $breakpoint-xl) {
-    //padding-bottom: 210px;
+  @media (max-width: $breakpoint-xs) {
   }
 }
 
@@ -149,27 +153,27 @@
   gap: 70px;
   margin-bottom: 15px;
   .customCollapseHousing {
+    //@include main.border-radius-collapse-housing;
+
     .collapse__container {
       .collapse {
         h3 {
-          @include main.border-radius-collapse-housing;
+          //@include main.border-radius-collapse-housing;
         }
       }
     }
   }
   //media
-  @media (max-width: $breakpoint-xs) {
+  @media (max-width: $breakpoint-xl) {
+  }
+  @media (max-width: $breakpoint-lg) {
+  }
+  @media (max-width: $breakpoint-md) {
   }
   @media (max-width: $breakpoint-sm) {
     flex-direction: column;
     gap: 0;
   }
-  @media (max-width: $breakpoint-md) {
-  }
-  @media (max-width: $breakpoint-lg) {
-  }
-  @media (max-width: $breakpoint-xl) {
-    //padding-bottom: 210px;
-    //margin-bottom: 10px;
+  @media (max-width: $breakpoint-xs) {
   }
 }
