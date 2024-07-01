@@ -152,17 +152,7 @@
   flex-direction: row;
   gap: 70px;
   margin-bottom: 15px;
-  .customCollapseHousing {
-    //@include main.border-radius-collapse-housing;
 
-    .collapse__container {
-      .collapse {
-        h3 {
-          //@include main.border-radius-collapse-housing;
-        }
-      }
-    }
-  }
   //media
   @media (max-width: $breakpoint-xl) {
   }
