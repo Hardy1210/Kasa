@@ -12,12 +12,14 @@ function Collapse({ title, content, additionalClass }) {
   }
   return (
     <>
-      <div className={`${styles.collapse__container} ${additionalClass}`}>
+      <div className={`${styles.collapse__container}`}>
         <div
           className={`${styles.collapse} ${isOpen ? styles.active : ''}`}
           onClick={toggleCollapse}
         >
-          <h3>{title}</h3>
+          <h3 className={additionalClass ? styles.borderRadiusHousing : ''}>
+            {title}
+          </h3>
           <div className={`${styles.expandContainer}`}>
             <div
               className={`${styles.expandContract} ${isOpen ? styles.expanded : styles.collapsed}`}

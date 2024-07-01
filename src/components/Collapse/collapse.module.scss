@@ -25,6 +25,10 @@
       padding: 15px 15px;
       @include main.border-radius-collapse;
     }
+    //aditional border radius dans le composant Housing
+    .borderRadiusHousing {
+      @include main.border-radius-collapse-housing;
+    }
     p {
       padding: 15px;
       font-weight: 500;

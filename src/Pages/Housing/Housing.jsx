@@ -69,12 +69,12 @@ function Housing() {
         <Collapse
           title="Description"
           content={housingData.description}
-          additionalClass={styles['customCollapseHousing']}
+          additionalClass="borderRadiusHousing"
         />
         <Collapse
           title="Equipments"
           content={housingData.equipments.join(', ')}
-          additionalClass={styles['customCollapseHousing']}
+          additionalClass="borderRadiusHousing"
         />
       </div>
       <Footer />

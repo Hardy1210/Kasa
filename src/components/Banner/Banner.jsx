@@ -14,7 +14,7 @@ function Banner({ banner, title }) {
   )
 }
 //creaction de PropTypes pour pouvoir reutilize
-//l'image et le titre on porra le remplir dans le composant où ira
+//l'image et le titre on pourra le remplir dans le composant où ira
 //le composant Banner
 Banner.propTypes = {
   banner: PropTypes.string.isRequired,
