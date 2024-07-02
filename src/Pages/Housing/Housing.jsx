@@ -1,5 +1,7 @@
 //important  useParams pour povoir rediriger et utilizer le parametres
 import { useParams, useNavigate } from 'react-router-dom'
+//useEffect s'excecute apres le premiere render du composant
+import { useEffect } from 'react'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import Carousel from '../../components/Carousel/Carousel'
@@ -17,11 +19,18 @@ function Housing() {
   const { id } = useParams()
   const navigate = useNavigate()
   const housingData = data.find((item) => item.id === id)
-
+  //useEffect s'aplique apres le premiere render du composant
+  useEffect(() => {
+    if (!housingData) {
+      navigate('/error') //va rediriger a la page de'error
+    }
+    //asure de que l'effet s'aplique quand housingData o navigate changent
+  }, [housingData, navigate])
+  //Si housingData no existe, el componente retorna null, lo que evita renderizar contenido transitorio mientras se realiza la redirección.
   if (!housingData) {
-    navigate('/error')
-    return null // redirige automatiquement
+    return null
   }
+
   //logique pour renderiser les rating
   const renderStars = (rating) => {
     const stars = []

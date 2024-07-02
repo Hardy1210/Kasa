@@ -30,6 +30,7 @@
       width: 100%;
       height: 425px;
       object-fit: cover;
+      object-position: center;
       //une fois totue enleve on va restaure cette ligne
       //display: none;
     }
@@ -111,5 +112,42 @@
     }
   }
   @media (max-width: $breakpoint-xs) {
+  }
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000;
+    overflow-y: auto;
+    .modal__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      max-width: 90%;
+      .modal__image {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        margin-bottom: 20px; // Espacio entre imágenes
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); // Opcional: añade un poco de sombra para separar visualmente las imágenes
+      }
+    }
+    .modal__counter {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 5px 10px;
+      border-radius: 15px;
+    }
   }
 }

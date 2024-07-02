@@ -77,6 +77,17 @@ function Carousel({ pictures }) {
     preventDefaultTouchmoveEvent: true,
   })
 
+  //logique pour voir les images en entier dans une Modal
+  const [modalOpen, setModalOpen] = useState(false)
+
+  const openModal = () => {
+    setModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setModalOpen(false)
+  }
+
   return (
     <div className={styles.carousel__container}>
       <div {...handlers} className={styles.pictures__container}>
@@ -94,6 +105,7 @@ function Carousel({ pictures }) {
               src={picture}
               alt={`Slide ${index}`}
               className={styles.carousel__image}
+              onClick={openModal}
             />
           ))}
         </div>
@@ -115,6 +127,23 @@ function Carousel({ pictures }) {
           )}
         </div>
       </div>
+      {modalOpen && (
+        <div className={styles.modal} onClick={closeModal}>
+          <div
+            className={styles.modal__content}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {pictures.map((picture, index) => (
+              <img
+                key={index}
+                src={picture}
+                alt={`Full size ${index}`}
+                className={styles.modal__image}
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
