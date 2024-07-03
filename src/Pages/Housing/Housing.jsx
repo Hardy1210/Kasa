@@ -1,4 +1,5 @@
-//important  useParams pour povoir rediriger et utilizer le parametres
+//important  useParams pour pouvoir acceder a les donne URL et UseNavigate
+//pour rediriger a la page d'error
 import { useParams, useNavigate } from 'react-router-dom'
 //useEffect s'excecute apres le premiere render du composant
 import { useEffect } from 'react'
@@ -16,13 +17,15 @@ import styles from '../../Pages/Housing/housing.module.scss'
 
 function Housing() {
   //l'id est important pour lui donner exactement l'endroi où naviguee
+  //donc useParams obtient l 'ID de la URL les donee data.json
   const { id } = useParams()
   const navigate = useNavigate()
+  //on va chercher les donne qui son atache a ses ID
   const housingData = data.find((item) => item.id === id)
   //useEffect s'aplique apres le premiere render du composant
   useEffect(() => {
     if (!housingData) {
-      navigate('/error') //va rediriger a la page de'error
+      navigate('/error') //va rediriger a la page de'error si on toruve pas les donnees
     }
     //asure de que l'effet s'aplique quand housingData o navigate changent
   }, [housingData, navigate])
@@ -76,7 +79,6 @@ function Housing() {
             <h4>{housingData.host.name}</h4>
             <img src={housingData.host.picture} alt={housingData.host.name} />
           </div>
-
           {/*<div className={styles['rating']}>
             {renderStars(housingData.rating)}
           </div>*/}

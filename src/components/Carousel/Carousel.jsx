@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+//pour faire l'utilization de UseSwipeable il faut fair une installation npm
 import { useSwipeable } from 'react-swipeable'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,17 +10,26 @@ import {
 import Counter from '../../Hooks/Counter/Counter'
 import styles from '../Carousel/carousel.module.scss'
 
+//on pase le props du parent içi
 function Carousel({ pictures }) {
   const [currentIndex, setCurrentIndex] = useState(pictures.length)
+  //offsetX pour l'evenement de defilement dans l'axe X horizontal
   const [offsetX, setOffsetX] = useState(0)
+  //transitionEnabled va controler si les trantitions des images est habilitee
   const [transitionEnabled, setTransitionEnabled] = useState(true)
+  //hook personalisee counter pour le compteur.
+  // le parametre isVisible va a controle si on peut affiche les elements chosis ou non
+  // avec une condition && si est vrais
   const { count, setCount, increment, decrement, isVisible } = Counter(
     1,
     pictures.length,
   )
 
+  //liste des images de la data en trois fois pour simuler le carousel infinit
   const totalPictures = [...pictures, ...pictures, ...pictures]
 
+  //moveToNearestSlide va ajouster l'index de l'image actuel pour mantenir
+  //l'effe de boucle infinit
   const moveToNearestSlide = useCallback(() => {
     const totalSlides = pictures.length
     if (currentIndex < totalSlides) {
@@ -31,6 +41,7 @@ function Carousel({ pictures }) {
     }
   }, [currentIndex, pictures.length])
 
+  //pour des effets secondaires des changement qui passent apres le render
   useEffect(() => {
     if (!transitionEnabled) {
       requestAnimationFrame(() => {
@@ -41,10 +52,12 @@ function Carousel({ pictures }) {
     }
   }, [transitionEnabled])
 
+  //va actualiser le  compteur des images visibles quand l'index actuel change
   useEffect(() => {
     setCount((currentIndex % pictures.length) + 1)
   }, [currentIndex, setCount, pictures.length])
 
+  //controle l'increment et decrement des immages
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => prevIndex - 1)
     decrement()
@@ -55,6 +68,7 @@ function Carousel({ pictures }) {
     increment()
   }
 
+  //controleur de defilement(glisement) qui actualize l'etat entre slides
   const handlers = useSwipeable({
     onSwiping: (eventData) => {
       if (Math.abs(eventData.deltaX) > 10) {
@@ -79,11 +93,11 @@ function Carousel({ pictures }) {
 
   //logique pour voir les images en entier dans une Modal
   const [modalOpen, setModalOpen] = useState(false)
-
+  //qui va avec <img/> avec oneClick
   const openModal = () => {
     setModalOpen(true)
   }
-
+  //qui va a l'interiur de la modal modalOpen
   const closeModal = () => {
     setModalOpen(false)
   }
