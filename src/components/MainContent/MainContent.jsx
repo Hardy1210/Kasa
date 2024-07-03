@@ -12,9 +12,14 @@ import styles from '../MainContent/mainContent.module.scss'
 function MainContent() {
   return (
     <>
+      {/* Render du composant banner et on passe le props quon metera dens le composant en lui meme */}
       <Banner banner={banner} title="Chez vous, partout et ailleurs" />
       <div className={styles['gallery']}>
         <ul className={styles['gallery__grid']}>
+          {/*Map sur la data.json qui va a creer une element li pour chaque id de la data 
+          et meme temps chaque li a une cles unique key={} basee sur l'id item
+          et pareilment on va entourer dans un lien Link pour pouvoir rediriger au contenue 
+          base sur l'id de la data */}
           {data.map((item) => (
             <li key={item.id} className={styles['gallery__grid--item']}>
               <Link
@@ -31,3 +36,17 @@ function MainContent() {
   )
 }
 export default MainContent
+{
+  /*il faut prendre en compte qu'on peut faire un destructuration 
+  directement sur "map" pour pouvoir faire un code plus prope et eviter la repetition du "item
+   {data.map(({ id, title, cover }) => (
+            <li key={id} className={styles['gallery__grid--item']}>
+              <Link
+                to={`/housing/${id}`}
+                className={styles['gallery__grid--link']}
+              >
+                <Card id={id} title={title} cover={cover} />
+              </Link>
+            </li>
+          ))}*/
+}

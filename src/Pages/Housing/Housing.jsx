@@ -7,15 +7,15 @@ import Footer from '../../components/Footer/Footer'
 import Carousel from '../../components/Carousel/Carousel'
 import Collapse from '../../components/Collapse/Collapse'
 import data from '../../data/data.json'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
-
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//import { faStar } from '@fortawesome/free-solid-svg-icons'
+import Rating from '../../components/Rating/Rating'
 //styles
 import styles from '../../Pages/Housing/housing.module.scss'
 //import styles from '../Housing/housing.module.scss'
 
 function Housing() {
-  //l'id est important pour lui donne exactement l'endroi où naviguee
+  //l'id est important pour lui donner exactement l'endroi où naviguee
   const { id } = useParams()
   const navigate = useNavigate()
   const housingData = data.find((item) => item.id === id)
@@ -30,21 +30,29 @@ function Housing() {
   if (!housingData) {
     return null
   }
-
-  //logique pour renderiser les rating
-  const renderStars = (rating) => {
+  {
+    /* const renderStars = (rating) => {
     const stars = []
     for (let i = 0; i < 5; i++) {
+      //chaque element jsx s'ajoute a l'array avec la metode .push
       stars.push(
         <FontAwesomeIcon
           key={i}
           icon={faStar}
+          //on va parcourir le numero de etoiles qui son disponibles dans rating
+          //et on va ajouter un style avec les etoiles qui son disponibles de 1/5
+          // et si on a pas des etoiles jusqu'au 5 alors les manquant auront un style empty-star
+          //avec un fond gris
           className={i < rating ? styles['filled-star'] : styles['empty-star']}
         />,
       )
     }
     return stars
+  }*/
   }
+  //pour bien renderize les etoiles qui prned la valeur du data rating
+  //il faut s'assurer de que c'est un valeur number qui est signale dans propTypes et pas string avec cette ligne
+  const rating = parseInt(housingData.rating, 10)
   return (
     <>
       <Header />
@@ -69,9 +77,10 @@ function Housing() {
             <img src={housingData.host.picture} alt={housingData.host.name} />
           </div>
 
-          <div className={styles['rating']}>
+          {/*<div className={styles['rating']}>
             {renderStars(housingData.rating)}
-          </div>
+          </div>*/}
+          <Rating rating={rating} />
         </div>
       </div>
       <div className={styles['collapse__container--housing']}>
@@ -81,8 +90,14 @@ function Housing() {
           additionalClass="borderRadiusHousing"
         />
         <Collapse
-          title="Equipments"
-          content={housingData.equipments.join(', ')}
+          title="Équipements"
+          content={
+            <ul>
+              {housingData.equipments.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+              ))}
+            </ul>
+          }
           additionalClass="borderRadiusHousing"
         />
       </div>

@@ -8,7 +8,7 @@ import { aboutList } from '../../data/aboutList'
 import Collapse from '../../components/Collapse/Collapse'
 import styles from '../About/about.module.scss'
 
-//on utilise la metode MAP pour pouvoir affiche le contenue de
+//on utilise la metode MAP pour pouvoir afficher le contenue de
 // mon aboutList.js qui se trouve dan le dosier /data
 function APropo() {
   return (
@@ -17,7 +17,12 @@ function APropo() {
       <Banner banner={banner} title="" />
       <div className={styles['about__container']}>
         {aboutList.map((item, index) => (
-          <Collapse key={index} title={item.title} content={item.content} />
+          <Collapse
+            key={index}
+            title={item.title}
+            content={item.content}
+            additionalClass={styles.borderRadiusHousing}
+          />
         ))}
       </div>
 

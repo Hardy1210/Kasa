@@ -1,0 +1,33 @@
+@use '../../styles/main.scss' as main;
+//colors
+@import '../../styles/base/colors';
+//import pour gerer les medias queries
+@import '../../styles/media/querie';
+.rating {
+  color: $primary-color;
+  display: flex;
+  margin: 0 auto;
+  font-size: 24px;
+  gap: 15px;
+  margin-top: 27px;
+  .filled-star {
+    display: block;
+  }
+  .empty-star {
+    color: $color-empty-star;
+  }
+  @media (max-width: $breakpoint-xl) {
+    //padding-bottom: 210px;
+  }
+  @media (max-width: $breakpoint-lg) {
+  }
+  @media (max-width: $breakpoint-md) {
+  }
+  @media (max-width: $breakpoint-sm) {
+    margin: 0;
+    font-size: 15px;
+    gap: 7px;
+  }
+  @media (max-width: $breakpoint-xs) {
+  }
+}

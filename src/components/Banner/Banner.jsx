@@ -2,6 +2,9 @@
 import PropTypes from 'prop-types'
 import styles from '../Banner/banner.module.scss'
 
+//les props viennent du composant parent ou se trouve les information
+//comment la data.json ou autre tipe d'information
+// comment l'importation d'une image dans le composant parent
 function Banner({ banner, title }) {
   return (
     <>
@@ -13,9 +16,7 @@ function Banner({ banner, title }) {
     </>
   )
 }
-//creaction de PropTypes pour pouvoir reutilize
-//l'image et le titre on pourra le remplir dans le composant où ira
-//le composant Banner
+//on va definir les PropTypes pour valider les props reçus
 Banner.propTypes = {
   banner: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

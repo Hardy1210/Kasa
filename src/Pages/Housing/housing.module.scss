@@ -76,7 +76,7 @@
         @include main.border-radius-host-img;
       }
     }
-    .rating {
+    /*.rating {
       color: $primary-color;
       display: flex;
       margin: 0 auto;
@@ -89,7 +89,7 @@
       .empty-star {
         color: $color-empty-star;
       }
-    }
+    }*/
   }
   @media (max-width: $breakpoint-xl) {
     //padding-bottom: 210px;
