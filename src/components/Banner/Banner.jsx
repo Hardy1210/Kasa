@@ -11,6 +11,7 @@ function Banner({ banner, title }) {
       <div className={styles.banner__container}>
         <img src={banner} className={styles.banner} />
         <div className={styles['overlay']}></div>
+        {/*si title est true alors on afiche la propre title */}
         {title && <h1>{title}</h1>}
       </div>
     </>

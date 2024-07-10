@@ -1,17 +1,16 @@
 @import '../../styles/media/querie';
 body {
   position: relative;
-  //min-height: 100vh;
   max-width: 1240px;
   margin: 0 auto;
   //padding botton pour pouvoir eloigne le contenu
   //principal du footer a cause de sa position absolut
   padding: 0 90px 210px 90px;
-  //display: flex;
-  //flex-direction: column;
-  //gap: 22px;
-  //media queries
+  //apres on fait un calc() pour pouvoir compencer l'espace
+  //du footer que en position absolut
+  min-height: calc(100vh - 210px);
 
+  //media queries
   @media (max-width: $breakpoint-xs) {
     //padding: 0 20px;
   }
