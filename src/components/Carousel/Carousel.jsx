@@ -25,26 +25,34 @@ function Carousel({ pictures }) {
     pictures.length,
   )
 
-  //liste des images de la data en trois fois pour simuler le carousel infinit
+  //Opérateur de Décomposition (...)
+  //liste des images de la data en trois fois
+  //(repetir le tableau trois fois)pour simuler le carousel infinit
   const totalPictures = [...pictures, ...pictures, ...pictures]
 
   //moveToNearestSlide va ajouster l'index de l'image actuel pour mantenir
   //l'effe de boucle infinit
+  //useCallback est utilisé pour mémoriser la fonction moveToNearestSlide.
   const moveToNearestSlide = useCallback(() => {
     const totalSlides = pictures.length
+    //: Si currentIndex est inférieur au nombre total de diapositives (totalSlides).
     if (currentIndex < totalSlides) {
-      setTransitionEnabled(false)
-      setCurrentIndex(currentIndex + totalSlides)
+      setTransitionEnabled(false) //Désactive les transitions.
+      setCurrentIndex(currentIndex + totalSlides) // Ajoute totalSlides à currentIndex.
+      // Si currentIndex est supérieur ou égal à deux
+      //fois le nombre total de diapositives (totalSlides * 2).
     } else if (currentIndex >= totalSlides * 2) {
-      setTransitionEnabled(false)
-      setCurrentIndex(currentIndex - totalSlides)
+      setTransitionEnabled(false) //Désactive les transitions.
+      setCurrentIndex(currentIndex - totalSlides) //En soustrayant totalSlides, nous revenons au même index mais dans le deuxième jeu de diapositives.
     }
   }, [currentIndex, pictures.length])
 
   //pour des effets secondaires des changement qui passent apres le render
   useEffect(() => {
     if (!transitionEnabled) {
+      //Le premier requestAnimationFrame planifie l'exécution du deuxième requestAnimationFrame.
       requestAnimationFrame(() => {
+        //Le deuxième requestAnimationFrame planifie l'exécution de setTransitionEnabled(true), ce qui réactive les transitions en réglant transitionEnabled à true.
         requestAnimationFrame(() => {
           setTransitionEnabled(true)
         })
@@ -52,10 +60,20 @@ function Carousel({ pictures }) {
     }
   }, [transitionEnabled])
 
+  ///////////////////////////////
   //va actualiser le  compteur des images visibles quand l'index actuel change
+  //"setCount" vient de notre composant Counter
   useEffect(() => {
-    setCount((currentIndex % pictures.length) + 1)
+    //setCount est utilisé à l'intérieur de useEffect pour mettre à jour l'état
+    //du compteur (Counter) chaque fois que currentIndex change.
+
+    // le compteur revient au début après avoir atteint la fin
+    //de maniere cyclique
+    setCount((currentIndex % pictures.length) + 1) // Cette ligne met à jour le compteur avec le nouveau numéro d'image.
+    //useEffect s'exécutera chaque fois que currentIndex,
+    //setCount ou pictures.length changent.
   }, [currentIndex, setCount, pictures.length])
+  ///////////////////////////////
 
   //controle l'increment et decrement des immages
   const prevSlide = () => {

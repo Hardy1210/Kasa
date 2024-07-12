@@ -87,7 +87,7 @@ function Housing() {
       </div>
       <div className={styles['collapse__container--housing']}>
         <Collapse
-          title="Description"
+          title={'Description'}
           content={housingData.description}
           additionalClass="borderRadiusHousing"
         />
